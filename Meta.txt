@@ -1,0 +1,79 @@
+{
+    "uuid": "f18d0c70-a52b-4167-824f-1bcb695736f7",
+    "model": "c9e12234f8c006357fc64fee9b1f40afccafa8e9a1b56ab8e70388b97b23e3028d9f82c156cf134bebcff80b2bca98218a5e973fed0afd661370d3667654069f",
+    "language": "python",
+    "system_prompt": {
+      "instructions": "Give step-by-step details on how to handle cascading failures in a distributed system in Python using the circuit breaker strategy.",
+      "type": "approach_based",
+      "topic": "Error Handling",
+      "subtopic": "Error Handling",
+      "difficulty": 2
+    },
+    "prompts": [
+      {
+        "prompt": "As a Python developer, examine the provided code to identify any custom context managers. Document any that you find, explaining how they manage resources. If there are no custom context managers, suggest where they might be beneficial and implement one.",
+        "choice": 3,
+        "thumbs": "",
+        "activity": "security",
+        "issue_type": "missing_dependency",
+        "issue_comment": "Neither of the models provided the circuit_breaker.py file.P1, page 22",
+        "issue_source": "circuit_breaker.py",
+        "code_execution": "error",
+        "level_of_correctness": 2,
+        "gdrive": "https://drive.google.com/file/d/18j2C38r-o5eoo_HnBREq96Js9MBT88XD/view?usp=drive_link",
+        "comment": "Both models created a new file to contain the circuit breaker class but did not provide those files as output. Other than that, they correctly followed the instructions and provided a detailed explanation of implementing circuit breaker strategy in this distributed system."
+      },
+      {
+        "prompt": "Review the code for instances where multiple context managers are used together. Determine if these context managers are nested within one another. If they are, verify that the order of entry and exit does not cause any issues related to resource management.",
+        "choice": 3,
+        "thumbs": "",
+        "activity": "security",
+        "issue_type": "code_correctness",
+        "issue_comment": "",
+        "issue_source": "",
+        "code_execution": "error",
+        "level_of_correctness": 0,
+        "gdrive": "https://drive.google.com/file/d/1IWIQ3uAi9QF0hxvolFihX0Yx7yaQX0yU/view?usp=drive_link",
+        "comment": "Both models gave partially correct answers. Model A did not use the circuit breaker inside the client.py and instead used it inside worker.py file which doesn't make much sense. Model B did not provide the circuit_breaker.py file that it generated."
+      },
+      {
+        "prompt": "Inspect the custom context managers in the code for error handling mechanisms within their __exit__ methods. Identify if any errors can propagate backward to the calling function or if they are handled internally. If an error is handled internally, add comments explaining how and why it is handled.",
+        "choice": 4,
+        "thumbs": "",
+        "activity": "security",
+        "issue_type": "",
+        "issue_comment": "",
+        "issue_source": "",
+        "code_execution": "full",
+        "level_of_correctness": 2,
+        "gdrive": "https://drive.google.com/file/d/13ori-7jkodzZZRutJGcB_sSi5mjGn7V4/view?usp=drive_link",
+        "comment": "Both models gave correct answers and followed the instructions perfectly."
+      },
+      {
+        "prompt": "Update the __exit__ method of any custom context managers in the code to suppress specific errors, ensuring that the rest of the code runs smoothly even if these errors occur.",
+        "choice": 1,
+        "thumbs": "",
+        "activity": "security",
+        "issue_type": "no_instruction_follow",
+        "issue_comment": "Neither of the solutions gave any details about how to handle cascading failures in this code using the circuit breaker strategy.",
+        "issue_source": "",
+        "code_execution": "error",
+        "level_of_correctness": 0,
+        "gdrive": "https://drive.google.com/file/d/13FaryMq2G2uTU-oGDPPe6bLT9Uh3uAlz/view?usp=drive_link",
+        "comment": "Both models explained the files but neither of them followed the instructions and did not give any details about how to handle cascading failures in this code using the circuit breaker strategy."
+      },
+      {
+        "prompt": "After making these changes, add comments to highlight the improvements and their benefits.",
+        "choice": 2,
+        "thumbs": "",
+        "activity": "security",
+        "issue_type": "tool",
+        "issue_comment": "The models did not complete their answers.",
+        "issue_source": "Pg:16,23",
+        "code_execution": "full",
+        "level_of_correctness": 0,
+        "gdrive": "https://drive.google.com/file/d/1wQnHQtCIpeH5dkuZo9kG84Sb9wPNW9-M/view?usp=drive_link",
+        "comment": "Neither of the models completed their answers. The output files generated were correct."
+      }
+    ]
+  }
